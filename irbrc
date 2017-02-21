@@ -1,6 +1,6 @@
-" Supposedly adds auto completion with double tab
+# Supposedly adds auto completion with double tab
 require 'irb/completion'
 
-" Pretty printing rails console
+# Pretty printing rails console
 require "awesome_print"
 AwesomePrint.irb!
