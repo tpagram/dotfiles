@@ -25,6 +25,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mhinz/vim-startify'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,10 +58,11 @@ set smarttab
 set softtabstop=0
 set shiftwidth=2
 
-" Solarized color scheme
+" Color scheme
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme base16-solarized-dark 
+colorscheme base16-eighties
 
 " Start NERDTREE
 autocmd vimenter * NERDTree
