@@ -28,6 +28,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mhinz/vim-startify'
 Plugin 'chriskempson/base16-vim'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

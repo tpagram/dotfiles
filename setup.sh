@@ -1,6 +1,6 @@
-dir=~/`dirname $0`
+dir=$(pwd)
 backup_dir=~/.backup_dotfiles
-files="vimrc vim"
+files="vimrc vim gvimrc tmux.conf irbrc"
 
 mkdir -p $backup_dir
 
@@ -8,5 +8,6 @@ for file in $files; do
   echo "Backing up ~/.$file to $backup_dir/.$file"
   mv ~/.$file $backup_dir/.$file
   echo "Linking $dir/$file to ~/.$file"
-  ln -s $dir/$file ~/.$file 
+  ln -sn $dir/$file ~/.$file 
+  echo
 done
