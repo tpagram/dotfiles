@@ -1,0 +1,160 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/work/tickedoff-web
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 app/views/backend/work_requests/new.html.slim
+badd +15 app/views/backend/work_requests/_form.html.slim
+badd +1 app/views/backend/work_requests/index.html.slim
+badd +300 app/controllers/backend/work_requests_controller.rb
+badd +1 app/serializers/work_request_presenter_serializer.rb
+badd +47 app/helpers/work_requests_helper.rb
+badd +12 app/views/backend/work_requests/edit.html.slim
+badd +55 app/assets/javascripts/viewmodels/workRequestForm.coffee
+badd +23 app/assets/javascripts/widgets/locationSelectWidget.coffee
+badd +50 app/controllers/backend/typeaheads_controller.rb
+badd +1 app/controllers/backend/shops_controller.rb
+badd +19 app/controllers/shop/shops_controller.rb
+badd +1 .git/index
+badd +177 ~/misc/dotfiles/vim/bundle/vim-fugitive/doc/fugitive.txt
+argglobal
+silent! argdel *
+edit .git/index
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
+wincmd w
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 33 + 105) / 211)
+exe '2resize ' . ((&lines * 16 + 25) / 51)
+exe 'vert 2resize ' . ((&columns * 98 + 105) / 211)
+exe '3resize ' . ((&lines * 16 + 25) / 51)
+exe 'vert 3resize ' . ((&columns * 98 + 105) / 211)
+exe '4resize ' . ((&lines * 15 + 25) / 51)
+exe 'vert 4resize ' . ((&columns * 98 + 105) / 211)
+exe 'vert 5resize ' . ((&columns * 78 + 105) / 211)
+argglobal
+enew
+file NERD_tree_2
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+wincmd w
+argglobal
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 4 - ((1 * winheight(0) + 8) / 16)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+4
+normal! 0
+wincmd w
+argglobal
+edit app/controllers/shop/shops_controller.rb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 19 - ((0 * winheight(0) + 8) / 16)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 0137|
+wincmd w
+argglobal
+edit app/controllers/backend/shops_controller.rb
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 61 - ((0 * winheight(0) + 7) / 15)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+61
+normal! 0103|
+wincmd w
+argglobal
+edit app/views/backend/work_requests/_form.html.slim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 95 - ((17 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+95
+normal! 0
+wincmd w
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 33 + 105) / 211)
+exe '2resize ' . ((&lines * 16 + 25) / 51)
+exe 'vert 2resize ' . ((&columns * 98 + 105) / 211)
+exe '3resize ' . ((&lines * 16 + 25) / 51)
+exe 'vert 3resize ' . ((&columns * 98 + 105) / 211)
+exe '4resize ' . ((&lines * 15 + 25) / 51)
+exe 'vert 4resize ' . ((&columns * 98 + 105) / 211)
+exe 'vert 5resize ' . ((&columns * 78 + 105) / 211)
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToOc
+set winminheight=1 winminwidth=1
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

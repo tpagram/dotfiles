@@ -21,40 +21,36 @@ badd +112 spec/api/api/v1/payments_spec.rb
 badd +80 spec/api/api/v1/profiles_spec.rb
 badd +23 app/api/api/v1/profiles.rb
 badd +1 app/models/trainer_profile.rb
-badd +0 app/models/profile.rb
+badd +1 app/models/profile.rb
 badd +46 spec/api/api/v1/registrations_spec.rb
 badd +33 app/api/api/v1/registrations.rb
 badd +55 spec/models/assessment_spec.rb
 badd +63 spec/services/calendar_items/filters/month_filter_spec.rb
-badd +0 app/services/calendar_items/filters/month_filter.rb
+badd +1 app/services/calendar_items/filters/month_filter.rb
+badd +0 NERD_tree_3
+badd +49 ~/.vim/bundle/vim-startify/doc/startify.txt
 argglobal
 silent! argdel *
-edit app/services/calendar_items/filters/month_filter.rb
+edit NERD_tree_3
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
+1wincmd h
 wincmd w
 wincmd _ | wincmd |
 split
 1wincmd k
 wincmd w
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 27 + 105) / 211)
+exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
 exe '2resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 2resize ' . ((&columns * 84 + 105) / 211)
+exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
 exe '3resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 3resize ' . ((&columns * 84 + 105) / 211)
-exe 'vert 4resize ' . ((&columns * 98 + 105) / 211)
+exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
 argglobal
-enew
-file NERD_tree_3
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -63,8 +59,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
 wincmd w
 argglobal
+edit app/services/calendar_items/filters/month_filter.rb
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -99,31 +103,12 @@ normal! zt
 4
 normal! 0
 wincmd w
-argglobal
-edit ~/.vim/bundle/vim-startify/doc/startify.txt
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let s:l = 49 - ((11 * winheight(0) + 24) / 49)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-49
-normal! 067|
-wincmd w
-4wincmd w
-exe 'vert 1resize ' . ((&columns * 27 + 105) / 211)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 105 + 105) / 211)
 exe '2resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 2resize ' . ((&columns * 84 + 105) / 211)
+exe 'vert 2resize ' . ((&columns * 105 + 105) / 211)
 exe '3resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 3resize ' . ((&columns * 84 + 105) / 211)
-exe 'vert 4resize ' . ((&columns * 98 + 105) / 211)
+exe 'vert 3resize ' . ((&columns * 105 + 105) / 211)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
