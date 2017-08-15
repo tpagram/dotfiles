@@ -1,9 +1,9 @@
 eval "$(rbenv init -)"
 source ~/.git-prompt.sh
 PS1='\[\e[0;32m\]\w\[\e[0;36m\]$(__git_ps1 "(%s) ")\[\e[0m\]\$ '
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#  . $(brew --prefix)/etc/bash_completion
-#fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 
