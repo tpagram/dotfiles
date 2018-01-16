@@ -7,7 +7,7 @@ export ZSH=/Users/tpagram/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="tpagram"
+ZSH_THEME="drac-emoji"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -93,6 +93,7 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 alias gpu="git pull"
+alias gs="git status"
 
 #rails
 alias rs="rails server"
@@ -115,6 +116,7 @@ alias work="cd ~/work"
 alias misc="cd ~/misc"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
+alias wb='ruby ~/misc/write-blind-edit-sober/write-blind.rb ~/misc/Dropbox/minibox/"$(date +%d-%-m).txt"'
 
 #Colours
 export CLICOLOR=1
@@ -164,3 +166,15 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 export HISTTIMEFORMAT="%d/%m/%y %T " 
+
+#Airtasker deploy
+getcreds() { `raxawscreds airtasker-$1`; }
+getami() { ~/code/deployment-utilities/bg_deploy/available.sh $1; }
+deploy() { ~/code/deployment-utilities/bg_deploy/bg_deploy.sh $1 $2 $3; }
+restartNode() { ~/code/deployment-utilities/restart_node.sh $1 $2; }
+export AIR_HOME="/Users/tpagram/code/airtasker-web"
+source $AIR_HOME/cli.sh
+
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+

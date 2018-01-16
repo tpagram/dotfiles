@@ -21,7 +21,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #ls
-alias la="ls -laFG" 
+alias la="ls -laFG"
 alias ls="command ls -G"
 alias grep='grep --color=auto'
 
@@ -35,7 +35,7 @@ alias ip="ipconfig getifaddr en0"
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
-alias gp="git push" 
+alias gp="git push"
 alias gpu="git pull"
 
 #rails
