@@ -1,0 +1,36 @@
+[
+  {
+    title: "Airtasker"
+    paths: [
+      "/Users/tpagram/code/airtasker"
+    ]
+    icon: "icon-git-branch green"
+  }
+  {
+    title: "Airtasker Web"
+    paths: [
+      "/Users/tpagram/code/web"
+    ]
+    icon: "icon-pencil pink"
+  }
+  {
+    title: "Dotfiles"
+    paths: [
+      "/Users/tpagram/misc/dotfiles"
+    ]
+    icon: "icon-gift white"
+  }
+  {
+    title: "The Knowledge"
+    paths: [
+      "/Users/tpagram/code/the-knowledge"
+    ]
+    icon: "icon-book blue"
+  }
+  {
+    title: "Scripts"
+    paths: [
+      "/Users/tpagram/misc/scripts"
+    ]
+  }
+]

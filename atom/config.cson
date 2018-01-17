@@ -1,0 +1,55 @@
+"*":
+  core:
+    disabledPackages: [
+      "wrap-guide"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules"
+    ]
+    telemetryConsent: "no"
+  editor:
+    fontSize: 20
+    preferredLineLength: 200
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "a6fdd2e8-ebe3-04a1-ff8f-986d6bd52b99"
+  "git-blame":
+    columnWidth: 364
+  "linter-rubocop":
+    command: "/Users/thomas/.rbenv/versions/2.4.1/bin/rubocop"
+  "linter-ruby":
+    rubyExecutablePath: "/Users/tpagram/.rbenv/versions/2.4.1/bin/ruby"
+  "linter-ui-default":
+    panelHeight: 69
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap: {}
+  pigments:
+    notifyReloads: false
+  "project-manager":
+    alwaysOpenInSameWindow: true
+    environmentSpecificProjects: true
+    includeGitRepositories: true
+    sortBy: "title"
+  "ruby-test":
+    rspecAllCommand: "spring rspec --tty spec"
+    rspecFileCommand: "spring rspec --tty {relative_path}"
+    rspecSingleCommand: "spring rspec --tty {relative_path}:{line_number}"
+  "seti-syntax":
+    themeColor: "Green"
+  "seti-ui":
+    themeColor: "Green"
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false

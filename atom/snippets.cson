@@ -1,0 +1,82 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.ruby, .source.ruby.rails':
+  'Expose grape entity':
+    'prefix': 'expose'
+    'body': "expose :${1:field}, documentation: { type: '${2:String}', desc: '${3:Description}' }"
+  'Add column':
+    'prefix': 'ac'
+    'body': "add_column :${1:table}, :${2:column}, :${3:string}"
+  'Change column':
+    'prefix': 'cc'
+    'body': "change_column :${1:table}, :${2:column}, :${3:string}"
+
+
+'.text.slim':
+  'Bootstrap modal':
+    'prefix': 'modal'
+    'body': """
+      .modal.fade role="dialog" aria-labelledby="modal-label" aria-hidden="true" id="csv-modal"
+        .modal-dialog
+          = form_tag "scheduled_requests/import", method: :post
+            .modal-content
+              .modal-header
+                button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+                h4#modal-label.modal-title Import Work Requests from CSV
+              .modal-body.container-fluid
+                  = text_field_tag "test"
+              .modal-footer
+                button.btn.btn-default data-dismiss="modal" type="button"
+                  | Close
+                = submit_tag "Upload", class: 'btn btn-primary'
+      = link_to 'Import Requests from CSV', '', class: 'btn btn-primary', data: { toggle: "modal", target: "#csv-modal"}
+    """
+  'Form tag':
+    'prefix': 'ft'
+    'body': """
+      = form_tag(${1:path}, multipart: true) do
+        = file_field_tag '${2:file}'
+    """
+  'Tabs':
+    'prefix': 'tabs'
+    'body': """
+      ul.nav.nav-pills role="tablist"
+        li.nav-item
+          a.nav-link.active href="#old" data-toggle="tab" role="tab" Old
+        li.nav-item
+          a.nav-link href="#wow" data-toggle="tab" role="tab" wow
+        li.nav-item
+          a.nav-link href="#link" data-toggle="tab" role="tab" Link
+        li.nav-item
+          a.nav-link href="#ok" data-toggle="tab" role="tab" Ok
+
+      .tab-content
+        .tab-pane.active#old role="tabpanel"
+          | testing1
+        .tab-pane#wow role="tabpanel"
+          | testing2
+        .tab-pane#link role="tabpanel"
+          | testing3
+        .tab-pane#ok role="tabpanel"
+          | testing4
+    """
