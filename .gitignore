@@ -1,3 +1,17 @@
+# OSX
 .DS_Store
+
+# Vim
 *.swp
 *.swo
+
+# Atom
+blob-store
+compile-cache
+dev
+storage
+packages
+recovery
+.apm
+.node-gyp
+.npm
